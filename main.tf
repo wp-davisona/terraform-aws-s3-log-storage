@@ -32,10 +32,10 @@ module "aws_s3_bucket" {
   lifecycle_rule_ids = local.deprecated_lifecycle_rule.enabled ? [module.this.id] : null
   lifecycle_rules    = local.deprecated_lifecycle_rule.enabled ? [local.deprecated_lifecycle_rule] : null
 
-  logging = var.access_log_bucket_name == "" ? null : {
+  logging = var.access_log_bucket_name == "" ? null : [{
     bucket_name = var.access_log_bucket_name
     prefix      = "${var.access_log_bucket_prefix}${local.bucket_name}/"
-  }
+  }]
 
   sse_algorithm      = var.sse_algorithm
   kms_master_key_arn = var.kms_master_key_arn
