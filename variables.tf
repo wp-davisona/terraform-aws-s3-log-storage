@@ -189,7 +189,7 @@ variable "lifecycle_configuration_rules" {
     enabled = bool
     id      = string
 
-    abort_incomplete_multipart_upload_days = number
+    abort_incomplete_multipart_upload_days = optional(number)
 
     # `filter_and` is the `and` configuration block inside the `filter` configuration.
     # This is the only place you should specify a prefix.
