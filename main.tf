@@ -26,8 +26,6 @@ module "aws_s3_bucket" {
   versioning_enabled = var.versioning_enabled
 
   source_policy_documents = var.source_policy_documents
-  # Support deprecated `policy` input
-  policy = var.policy
 
   lifecycle_configuration_rules = var.lifecycle_configuration_rules
   # Support deprecated lifecycle inputs
