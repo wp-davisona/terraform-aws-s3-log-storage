@@ -16,8 +16,8 @@ module "bucket_name" {
 
 
 module "aws_s3_bucket" {
-  source  = "cloudposse/s3-bucket/aws"
-  version = "4.10.0"
+  source  = "git@github.com:wp-davisona/terraform-aws-s3-bucket.git//?ref=pab-fix"
+  # version = "4.10.0"
 
   bucket_name        = local.bucket_name
   acl                = var.acl
